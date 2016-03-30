@@ -192,7 +192,7 @@ local function show_group_settingsmod(msg, data, target)
                 NUM_MSG_MAX = tonumber(data[tostring(msg.to.id)]['settings']['flood_msg_max'])
                 print('custom'..NUM_MSG_MAX)
         else
-                NUM_MSG_MAX = 0
+                NUM_MSG_MAX = 5
         end
     end
 
@@ -1460,7 +1460,7 @@ local function run(msg, matches)
       if not is_momod(msg) then
         return "فقط برای مدیران !!"
       end
-      if tonumber(matches[5]) < 5 or tonumber(matches[5]) > 20 then
+      if tonumber(matches[2]) < 5 or tonumber(matches[2]) > 20 then
         return "عدد اشتباه است . حساسیت باید بین 5 تا 20 باشد"
       end
       local flood_max = matches[2]
